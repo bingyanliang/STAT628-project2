@@ -1,4 +1,5 @@
 # Summary on data cleaned
+
 This is a markdown file for notes about how we cleaned the data
 
 - Initial rows: 252
@@ -9,9 +10,10 @@ This is a markdown file for notes about how we cleaned the data
 
 I used Z-score method to identify and remove outliners.
 
-The Z-score method is a statistical technique used to identify and remove outliers from a dataset. It quantifies how far away each data point is from the mean (average) of the dataset in terms of standard deviations. 
+The Z-score method is a statistical technique used to identify and remove outliers from a dataset. It quantifies how far away each data point is from the mean (average) of the dataset in terms of standard deviations.
 
 Here's how it works:
+
 - Calculate the mean (μ) and standard deviation (σ) of the dataset.
 - For each data point (x) in the dataset, calculate its Z-score using the following formula:
 - Z-score (Z) = (x - μ) / σ
