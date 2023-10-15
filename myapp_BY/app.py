@@ -32,25 +32,20 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
-@app.route("/", methods=['GET', 'POST'])
 def index():
-    result = None  # Ensure `result` is defined
-    error_message = None  # Ensure `error_message` is defined
+    result = None
+    error_message = None
     
     if request.method == 'POST':
         try:
-            # Attempt to retrieve and convert form data
             height = float(request.form.get('height'))
             abdomen = float(request.form.get('abdomen'))
             wrist = float(request.form.get('wrist'))
             
-            # Perform calculation if all retrievals were successful
-            result = -0.3975912*height + 0.7261291*abdomen + -1.5636103*wrist
+            result = 6.1683 - 0.3881 * height + 0.7228 * abdomen - 1.4684 * wrist
         except (TypeError, ValueError):
-            # Handle case where conversion to float fails
             error_message = "Please ensure all fields are numeric and non-empty."
     
-    # Render template with result and/or error message
     return render_template("index.html", result=result, error_message=error_message)
 
 if __name__ == "__main__":
